@@ -1,0 +1,66 @@
+Events API:
+    The main functionality will be to post events with all their information. 
+    You'll also be able to "create" new user to say that you're going to attend the event.
+
+Models:
+    Event:
+        _id: MongoDB ID
+        name: string
+        description: string
+        date: string
+        location: string
+        speakers: string[]
+        contactInfo: string
+        attendees: User.id[]
+    User:
+        _id: MongoDB ID
+        name: string
+        password: string
+        profession: string
+        attendsTo: Event.id[]
+
+User Routes:
+    GET:
+        Get user: 
+            /user/:username
+
+        Login: 
+            /user/login
+
+        Logout: 
+            /user/logout
+
+    POST:
+        Create new user:
+            /user
+
+    PUT:
+        Update user:
+            /user/:username
+
+    DELETE:
+        Delete user:
+            /user/:username
+    
+Event Routes:
+    GET:
+        Get all events:
+            /events
+
+        Get individual event:
+            /events/:eventId
+
+    PUT:
+        Update event:
+            /events/:eventId
+        
+        Post attendance to an event:
+            /events/attend/:username&:eventId
+
+    POST:
+        Create event:
+            /events
+
+    DELETE:
+        Delete event:
+            /events/:eventId

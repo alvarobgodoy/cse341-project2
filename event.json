@@ -1,0 +1,17 @@
+{
+    "event": {
+      "name": "AI Summit 2023",
+      "description": "An annual conference exploring the latest advancements in artificial intelligence and its impact on various industries.",
+      "date": "2023-06-15 to 2023-06-17",
+      "location": "San Francisco, CA",
+      "speakers": [
+        "John Doe",
+        "Jane Doe",
+        "Jim Smith"
+      ],
+      "contactInfo": "aisummit2023@example.com",
+      "attendees": [
+  
+      ]
+    }
+  }
