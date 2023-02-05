@@ -3,7 +3,7 @@ let host = 'localhost:8080'
 let scheme = 'http'
 
 // Change host and scheme if in production environments
-if(process.env.PORT) {
+if(process.env.PORT == 10000) {
   host = 'https://cse341-events.onrender.com'
   scheme = 'https'
 }
