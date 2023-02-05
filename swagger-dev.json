@@ -5,10 +5,10 @@
     "description": "An events API build for CSE 341 at BYUI. Author: Alvaro B. Godoy",
     "version": "1.0.0"
   },
-  "host": "https://cse341-events.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/api-docs": {
