@@ -16,7 +16,7 @@ const doc = {
     title: title,
     description: description,
   },
-  host: 'https://cse341-events.onrender.com',
+  host: 'cse341-events.onrender.com',
   schemes: ['https'],
 };
 
