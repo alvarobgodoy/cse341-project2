@@ -1,12 +1,20 @@
 const swaggerAutogen = require('swagger-autogen')();
+let host = 'localhost:8080'
+let scheme = 'http'
+
+// Change host and scheme if in production environments
+if(process.env.PORT) {
+  host = 'https://cse341-events.onrender.com'
+  scheme = 'https'
+}
 
 const doc = {
   info: {
     title: 'Contacts API',
     description: 'Description...',
   },
-  host: 'localhost:8080',
-  schemes: ['https'],
+  host: host,
+  schemes: [scheme],
 };
 
 const outputFile = './swagger.json'
