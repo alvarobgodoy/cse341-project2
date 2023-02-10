@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const swaggerUi = require('swagger-ui-express');
-let swaggerDocument = require('../swagger-dev.json');
+let swaggerDocument = require('../swagger.json');
 
-if(process.env.PORT == 10000) {
-    swaggerDocument = require('../swagger.json');
+if(process.env.USERNAME === 'alvar') {
+    swaggerDocument = require('../swagger-dev.json');
 }
 
 router.use('/api-docs', swaggerUi.serve);
