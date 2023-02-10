@@ -19,6 +19,7 @@ const regNewUser = async (req, res, next) => {
     name: req.body.name,
     password: req.body.password,
     profession: req.body.profession,
+    attendsTo: []
   };
 
   newUser = Service.cleanObject(newUser);

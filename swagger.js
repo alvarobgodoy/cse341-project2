@@ -74,14 +74,11 @@ let docDev = {
     }
   }
 };
-
-let doc = docDev;
-doc.host = 'cse341-events.onrender.com';
-doc.schemes = ['https'];
-
-const outputFile = './swagger.json'
-const outputFileDev = './swagger-dev.json'
 const endpointsFiles = ['./routes/index.js']
 
-swaggerAutogen(outputFile, endpointsFiles, doc);
-swaggerAutogen(outputFileDev, endpointsFiles, docDev);
+swaggerAutogen('./swagger-dev.json', endpointsFiles, docDev);
+
+let doc = {...docDev};
+doc.host = 'cse341-events.onrender.com';
+doc.schemes = ['https'];
+swaggerAutogen('./swagger.json', endpointsFiles, doc);
