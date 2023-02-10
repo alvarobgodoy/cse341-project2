@@ -12,8 +12,10 @@
     "swagger": "node swagger.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.17.3",
+    "express-validator": "^6.14.3",
     "mongodb": "^4.13.0",
     "swagger-ui-express": "^4.6.0"
   },
