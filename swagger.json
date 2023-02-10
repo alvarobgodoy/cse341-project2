@@ -68,7 +68,7 @@
     },
     "/events/": {
       "get": {
-        "description": "",
+        "description": "Get all events",
         "produces": [
           "application/json"
         ],
@@ -76,6 +76,207 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "speakers": {
+                  "example": "any"
+                },
+                "contactInfo": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/events/{id}": {
+      "get": {
+        "description": "Get individual event by Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "speakers": {
+                  "example": "any"
+                },
+                "contactInfo": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "event": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Tech Conference"
+        },
+        "description": {
+          "type": "string",
+          "example": "A conference focused on the latest advancements in technology"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "example": "2023-05-12"
+        },
+        "location": {
+          "type": "string",
+          "example": "San Francisco, CA"
+        },
+        "speakers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "John Doe"
+          }
+        },
+        "contactInfo": {
+          "type": "string",
+          "example": "techconference@example.com"
+        },
+        "attendees": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "63e18be2a421f7d29426070b"
+          }
+        }
+      }
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "John Doe"
+        },
+        "password": {
+          "type": "string",
+          "example": "password1"
+        },
+        "profession": {
+          "type": "string",
+          "example": "Software Engineer"
+        },
+        "attendsTo": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "63dee3ff32595491a090e934"
           }
         }
       }
