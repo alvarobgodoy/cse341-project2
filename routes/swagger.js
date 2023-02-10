@@ -7,6 +7,7 @@ if(process.env.PORT == 10000) {
 }
 
 router.use('/api-docs', swaggerUi.serve);
-router.get('/api-docs', swaggerUi.setup(swaggerDocument));
-
+router.get('/api-docs', swaggerUi.setup(swaggerDocument), () => {
+    // #swagger.ignore = true
+});
 module.exports = router;
