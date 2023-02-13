@@ -8,7 +8,7 @@ router.get('/', userController.getAll);
 
 router.post('/', signupValidation, userController.regNewUser);
 
-router.put('/:id', userController.regNewUser);
+router.put('/:id', userController.updateUser);
 
 router.delete('/:id', userController.deleteUser);
 

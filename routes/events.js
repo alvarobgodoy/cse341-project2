@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { createEventValidation } = require('../services/validate')
 
 const eventsController = require('../controllers/events');
 
@@ -10,7 +11,7 @@ router.get('/', eventsController.getAll);
 router.get('/:id', eventsController.getEvent);
 
 // Create event
-router.post('/', eventsController.createEvent);
+router.post('/', createEventValidation, eventsController.createEvent);
 
 // Create event
 router.put('/:id', eventsController.updateEvent);
