@@ -24,6 +24,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -101,8 +104,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "204": {
+            "description": "No Content"
           },
           "500": {
             "description": "Internal Server Error"
@@ -126,8 +129,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
@@ -137,6 +140,9 @@
     },
     "/events/": {
       "get": {
+        "tags": [
+          "Events"
+        ],
         "description": "Get all events",
         "produces": [
           "application/json"
@@ -145,11 +151,20 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Events"
+        ],
+        "description": "Create new event",
         "produces": [
           "application/json"
         ],
@@ -194,6 +209,9 @@
     },
     "/events/{id}": {
       "get": {
+        "tags": [
+          "Events"
+        ],
         "description": "Get individual event by Id",
         "produces": [
           "application/json"
@@ -209,11 +227,20 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Events"
+        ],
+        "description": "Update information of an event",
         "produces": [
           "application/json"
         ],
@@ -253,8 +280,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "204": {
+            "description": "No Content"
           },
           "500": {
             "description": "Internal Server Error"
@@ -262,7 +289,10 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Events"
+        ],
+        "description": "Delete event by id",
         "produces": [
           "application/json"
         ],
@@ -275,8 +305,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
